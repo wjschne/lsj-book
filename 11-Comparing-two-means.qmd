@@ -195,7 +195,7 @@ mykbl(lsj_chapter_tables[[11]][[1]]) |>
 
 ### A worked example, by hand
 
-Now, as I mentioned earlier, the *z*-test is almost never used in practice. It's so rarely used in real life that the basic installation of jamovi doesn't have a built in function for it. However, the test is so incredibly simple that it's really easy to do one manually. Let's go back to the data from Dr Zeppo's class. Having loaded the grades data, the first thing I need to do is calculate the sample mean, which I've already done ($72.3$). We already have the known population standard deviation ($\sigma = 9.5$), and the value of the population mean that the null hypothesis specifies ($\mu_0 = 67.5$), and we know the sample size ($N=20$).
+Now, as I mentioned earlier, the *z*-test is almost never used in practice. It's so rarely used in real life that the basic installation of jamovi doesn't have a built-in function for it. However, the test is so incredibly simple that it's really easy to do one manually. Let's go back to the data from Dr Zeppo's class. Having loaded the grades data, the first thing I need to do is calculate the sample mean, which I've already done ($72.3$). We already have the known population standard deviation ($\sigma = 9.5$), and the value of the population mean that the null hypothesis specifies ($\mu_0 = 67.5$), and we know the sample size ($N=20$).
 
 Next, let's calculate the (true) standard error of the mean (easily done with a calculator):
 $$
@@ -218,6 +218,23 @@ $$
 At this point, we would traditionally look up the value $2.26$ in our table of critical values. Our original hypothesis was two-sided (we didn't really have any theory about whether psych students would be better or worse at statistics than other students) so our hypothesis test is two-sided (or two-tailed) also. Looking at the little table that I showed earlier, we can see that $2.26$ is bigger than the critical value of $1.96$ that would be required to be significant at $\alpha = .05$, but smaller than the value of $2.58$ that would be required to be significant at a level of $\alpha = .01$. Therefore, we can conclude that we have a significant effect, which we might write up by saying something like this:
 
 > *With a mean grade of* $73.2$ in the sample of psychology students, and assuming a true population standard deviation of $9.5$, we can conclude that the psychology students have significantly different statistics scores to the class average ($z = 2.26, N = 20, p<.05$).
+
+### Using jamovi's one-sample z-test module.
+
+Though jamovi does not have a built-in z-test function, the one-sample z-test jamovi module can be installed by clicking the *Modules* button at the the top right of the program, selecting *jamovi library*, finding the *ztestvis* module, and clicking *Install*. 
+
+Once installed, the one-sample z-test function can be found in the *Misc* menu option. The module will conduct a one-sample z-test after the user enters the necessary information. In this case, as seen in @fig-fig11-ztest, the sample mean is 72.3, the null population mean is 67.5, the null population SD is 9.5, the sample size is 20, the alpha (significance) level is 0.05, and the alternative hypothesis is a 2-tailed test. 
+
+In @fig-fig11-ztest, we see a population distribution that is a large light-blue normal curve. The smaller normal distribution is the distribution of sample means, with the two critical regions shown in red in both tails of the distribution of sample means. The sample mean of 72.3 is a black dot that falls in the red critical region on the right side of the distribution of sample means. Because the sample mean is inside the critical region, the null hypothesis is rejected, suggesting that the sample was drawn from a population with a mean that was higher than the null population of 67.5.
+
+:::{#fig-fig11-ztest fig-alt="The output of the worked example using the jamovi one-sample z-test module. The input boxes at top right show the Sample Mean of 72.3, Null Population Mean of 67.5, Null Population SD of 9.5, Sample Size of 20, Alpha Level of 0.05, and the Alternative hypothesis set to 2-tailed (Not equal). A table shows the output of the z-test where Observed z is 2.26, Standard Error is 2.12, p is 0.024, and Effect Size is 0.51. The decision is \"Reject the null hypothesis. In a 2-tailed z-test with alpha = 0.05, the same mean of 72.3 is significantly different from the nul population mean of 67.5.\" The plot shows a large null population normal curve with a mean of 67.5 and a standard deviation of 9.5. A smaller normal distribution is shown representing the distribution of sample means. It has the same mean of 67.5, but has a standard deviation of 2.12, which is the standard error of the sample mean. The distribution of sample means has two critical regions at the left and right tails of the normal curve. The sample mean of 72.3 is in the critical region. A label at the right says \"Critical Region. Reject the null hypothesis if th esample mean is greater than 72.66 or less than 63.34.\""}
+
+![](images/fig11-ztest.png){width = 6.1}
+
+The output of the worked example using the jamovi one-sample z-test module
+
+:::
+
 
 ### Assumptions of the *z*-test
 
